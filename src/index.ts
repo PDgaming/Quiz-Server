@@ -8,7 +8,9 @@ dotenv.config();
 
 app.get("/", serveStatic({ path: "./index.html" }));
 
-app.post("/quiz", async (c) => {
+app.get("/quiz", serveStatic({ path: "./quiz.html" }));
+
+app.post("/api/quiz", async (c) => {
   const body = await c.req.json();
   if (!body) {
     return c.json({ message: "Body is empty" });

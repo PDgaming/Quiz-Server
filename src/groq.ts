@@ -10,8 +10,8 @@ export async function generateQuiz(c: any, quizParams: QuizParams) {
       {
         role: "user",
         content: `Generate a quiz with ${quizParams.number} questions on topic: ${quizParams.topic} with difficulty: ${quizParams.difficulty}.
-          Return your response only in json format.
-          Format of your response: {['question', 'answer'], ['question', 'answer']}`,
+          Always return only in json format.
+          Always return in the following format: {['question', 'answer'], ['question', 'answer']}`,
       },
     ],
     model: "openai/gpt-oss-20b",
