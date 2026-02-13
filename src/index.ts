@@ -1,20 +1,12 @@
 import { Hono } from "hono";
 import { generateQuiz } from "./groq";
-import { Questions } from "./types";
 import dotenv from "dotenv";
+import { serveStatic } from "hono/cloudflare-workers";
 
 const app = new Hono();
 dotenv.config();
 
-app.get("/", async (c) => {
-  return c.html(`<h1>Hi There! This is a simple quiz server.</h1>
-    <p>Use the endoing /quiz with the following parameters to generate a quiz.</p>
-      /quiz (POST)
-      number
-      topic
-      difficulty
-  `);
-});
+app.get("/", serveStatic({ path: "./index.html" }));
 
 app.post("/quiz", async (c) => {
   const body = await c.req.json();
