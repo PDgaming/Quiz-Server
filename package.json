@@ -1,5 +1,5 @@
 {
-  "name": "Quiz-Server",
+  "name": "quiz-server",
   "type": "module",
   "scripts": {
     "dev": "wrangler dev",
