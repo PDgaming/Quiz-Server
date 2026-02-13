@@ -3,15 +3,9 @@
   "name": "quiz-server",
   "main": "src/index.ts",
   "compatibility_date": "2026-02-13",
-  "compatibility_flags": [
-    "nodejs_compat",
-    "nodejs_compat_populate_process_env",
-  ],
-  // "vars": {
-  // "MY_VAR": "my-variable"
-  // },
+  "compatibility_flags": ["nodejs_compat"],
   "observability": {
     "enabled": true,
-    //   "head_sampling_rate": 1
+    "head_sampling_rate": 1,
   },
 }

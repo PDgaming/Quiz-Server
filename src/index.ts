@@ -1,8 +1,10 @@
 import { Hono } from "hono";
 import { generateQuiz } from "./groq";
 import { Questions } from "./types";
+import dotenv from "dotenv";
 
 const app = new Hono();
+dotenv.config();
 
 app.get("/", async (c) => {
   return c.html(`<h1>Hi There! This is a simple quiz server.</h1>
