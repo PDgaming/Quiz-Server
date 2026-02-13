@@ -1,10 +1,10 @@
 import Groq from "groq-sdk";
 import { Questions, QuizParams } from "./types";
 
-const apiKey = process.env.GROQ_API_KEY;
-const groq = new Groq({ apiKey });
-
 export async function generateQuiz(c: any, quizParams: QuizParams) {
+  const apiKey = process.env.GROQ_API_KEY;
+  const groq = new Groq({ apiKey });
+
   const response = await groq.chat.completions.create({
     messages: [
       {
